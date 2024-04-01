@@ -21,6 +21,12 @@
 		659DB1802BB89A6B00CEE88D /* DecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DB17F2BB89A6B00CEE88D /* DecoratorTests.swift */; };
 		659DB1822BB8C94400CEE88D /* AnalyticsDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DB1812BB8C94300CEE88D /* AnalyticsDecorator.swift */; };
 		659DB1842BB8D2AD00CEE88D /* AnalyticsDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DB1832BB8D2AD00CEE88D /* AnalyticsDecoratorTests.swift */; };
+		659DB1862BB9179000CEE88D /* MulticastClosureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DB1852BB9179000CEE88D /* MulticastClosureTests.swift */; };
+		659DB1892BB97FAD00CEE88D /* MultiCastClosures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DB1882BB97FAC00CEE88D /* MultiCastClosures.swift */; };
+		659DB18B2BB9A5A700CEE88D /* MultiCastDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DB18A2BB9A5A600CEE88D /* MultiCastDelegates.swift */; };
+		659DB18D2BB9A62A00CEE88D /* MulticastDelegatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DB18C2BB9A62A00CEE88D /* MulticastDelegatesTests.swift */; };
+		659DB1902BB9CE7900CEE88D /* Strategies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DB18F2BB9CE7800CEE88D /* Strategies.swift */; };
+		659DB1922BB9D1CE00CEE88D /* StrategyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DB1912BB9D1CE00CEE88D /* StrategyTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +56,12 @@
 		659DB17F2BB89A6B00CEE88D /* DecoratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecoratorTests.swift; sourceTree = "<group>"; };
 		659DB1812BB8C94300CEE88D /* AnalyticsDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsDecorator.swift; sourceTree = "<group>"; };
 		659DB1832BB8D2AD00CEE88D /* AnalyticsDecoratorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticsDecoratorTests.swift; sourceTree = "<group>"; };
+		659DB1852BB9179000CEE88D /* MulticastClosureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MulticastClosureTests.swift; sourceTree = "<group>"; };
+		659DB1882BB97FAC00CEE88D /* MultiCastClosures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCastClosures.swift; sourceTree = "<group>"; };
+		659DB18A2BB9A5A600CEE88D /* MultiCastDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiCastDelegates.swift; sourceTree = "<group>"; };
+		659DB18C2BB9A62A00CEE88D /* MulticastDelegatesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MulticastDelegatesTests.swift; sourceTree = "<group>"; };
+		659DB18F2BB9CE7800CEE88D /* Strategies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strategies.swift; sourceTree = "<group>"; };
+		659DB1912BB9D1CE00CEE88D /* StrategyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +114,8 @@
 		6520A6E82BB50A6C004C1DE7 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				659DB18E2BB9CE6100CEE88D /* Strategy */,
+				659DB1872BB97F9200CEE88D /* Multicast */,
 				659DB17C2BB8892400CEE88D /* Decorators */,
 				6520A6F92BB65A6E004C1DE7 /* Proxy */,
 				6520A6F22BB5A7EF004C1DE7 /* CommandQuery */,
@@ -135,6 +149,9 @@
 				659DB1752BB7E1B700CEE88D /* ProxyTests.swift */,
 				659DB17F2BB89A6B00CEE88D /* DecoratorTests.swift */,
 				659DB1832BB8D2AD00CEE88D /* AnalyticsDecoratorTests.swift */,
+				659DB1852BB9179000CEE88D /* MulticastClosureTests.swift */,
+				659DB18C2BB9A62A00CEE88D /* MulticastDelegatesTests.swift */,
+				659DB1912BB9D1CE00CEE88D /* StrategyTests.swift */,
 			);
 			path = DesignPatternsTests;
 			sourceTree = "<group>";
@@ -146,6 +163,23 @@
 				659DB1812BB8C94300CEE88D /* AnalyticsDecorator.swift */,
 			);
 			path = Decorators;
+			sourceTree = "<group>";
+		};
+		659DB1872BB97F9200CEE88D /* Multicast */ = {
+			isa = PBXGroup;
+			children = (
+				659DB1882BB97FAC00CEE88D /* MultiCastClosures.swift */,
+				659DB18A2BB9A5A600CEE88D /* MultiCastDelegates.swift */,
+			);
+			path = Multicast;
+			sourceTree = "<group>";
+		};
+		659DB18E2BB9CE6100CEE88D /* Strategy */ = {
+			isa = PBXGroup;
+			children = (
+				659DB18F2BB9CE7800CEE88D /* Strategies.swift */,
+			);
+			path = Strategy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,11 +282,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659DB1892BB97FAD00CEE88D /* MultiCastClosures.swift in Sources */,
 				659DB17E2BB8894000CEE88D /* MainQueueDecorator.swift in Sources */,
 				6520A6F42BB5A808004C1DE7 /* CommandQueryViolationViewModel.swift in Sources */,
 				6520A6F62BB5A846004C1DE7 /* ItemDataProvider.swift in Sources */,
 				6520A6E52BB50A68004C1DE7 /* ContentView.swift in Sources */,
 				6520A6F12BB52869004C1DE7 /* CommandQueryViewModel.swift in Sources */,
+				659DB1902BB9CE7900CEE88D /* Strategies.swift in Sources */,
+				659DB18B2BB9A5A700CEE88D /* MultiCastDelegates.swift in Sources */,
 				6520A6FB2BB65A7F004C1DE7 /* Proxy_MVP.swift in Sources */,
 				659DB1822BB8C94400CEE88D /* AnalyticsDecorator.swift in Sources */,
 				6520A6E32BB50A68004C1DE7 /* DesignPatternsApp.swift in Sources */,
@@ -264,9 +301,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				659DB1922BB9D1CE00CEE88D /* StrategyTests.swift in Sources */,
+				659DB1862BB9179000CEE88D /* MulticastClosureTests.swift in Sources */,
 				659DB1762BB7E1B700CEE88D /* ProxyTests.swift in Sources */,
 				659DB1842BB8D2AD00CEE88D /* AnalyticsDecoratorTests.swift in Sources */,
 				659DB1802BB89A6B00CEE88D /* DecoratorTests.swift in Sources */,
+				659DB18D2BB9A62A00CEE88D /* MulticastDelegatesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
