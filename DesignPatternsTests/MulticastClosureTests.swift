@@ -20,9 +20,15 @@ class MultiCastClosureTests: XCTestCase {
         vc2.loadView()
         
         
-     
-        vm.addObserver(vc1.updateLabel)
-        vm.addObserver(vc2.updateLabel)
+        
+        vm.addObserver {[weak vc1 ] val in
+            vc1?.dataLabel.text = val
+        }
+        
+        vm.addObserver {[weak vc2 ] val in
+            vc2?.dataLabel.text = val
+        }
+//        vm.addObserver(vc2.updateLabel)
         
         
         vm.triggerClosure("hello everyone")

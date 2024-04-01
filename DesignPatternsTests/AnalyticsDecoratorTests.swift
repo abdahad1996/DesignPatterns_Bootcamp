@@ -11,29 +11,42 @@ import UIKit
 
 class AnalyticsDecoratorTests: XCTestCase {
     func test_view_doesNotGenerateRetainCycles() async {
-        let (sut,loader) = makeSUT()
+        let (sut,loader,spy) = makeSUT()
 
       
         
-        sut.onAppear()
         
-       let values = await loader.loadItem()
+        
+       let _ = await loader.loadItem()
     
         
-
-        XCTAssertEqual(values, ["error", "success"])
+        
+        
+        XCTAssertEqual( spy.tracker, ["error", "success"])
 
         
     }
 
     // MARK: - Helpers
 
-    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (AnalyticsView,AnalyticsDecorator){
-        let analyticsDecorator = AnalyticsDecorator(decoratee: RemoteItemService(), analyticsTracker:  AnalyticsTracker())
+    private func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (AnalyticsView,AnalyticsDecorator,AnalyticsSpy){
+        let analyticsSpy = AnalyticsSpy()
+        let analyticsDecorator = AnalyticsDecorator(decoratee: RemoteItemService(), analyticsTracker:  analyticsSpy)
         let composer = AnalyticsComposer.instantiate(serive: analyticsDecorator)
        
-        return (composer,analyticsDecorator)
+        return (composer,analyticsDecorator,analyticsSpy)
     }
+    
+
+    
     
 }
 
+class AnalyticsSpy:Tracker{
+    var tracker = [String]()
+    func track(values: [String]) {
+        tracker = values
+    }
+    
+    
+}

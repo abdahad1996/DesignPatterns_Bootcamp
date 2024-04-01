@@ -8,17 +8,20 @@
 import Foundation
 import SwiftUI
 
-public class AnalyticsTracker {
+public protocol Tracker {
+func track(values:[String])
+}
+public class AnalyticsTracker:Tracker {
     public init(){}
-    func track(values:[String]){
+    public func track(values:[String]){
         print(values)
     }
 }
 public class AnalyticsDecorator:ItemService{
     let decoratee:ItemService
-    let analyticsTracker:AnalyticsTracker
+    let analyticsTracker:Tracker
     
-    public init(decoratee: ItemService, analyticsTracker: AnalyticsTracker) {
+    public init(decoratee: ItemService, analyticsTracker: Tracker) {
         self.decoratee = decoratee
         self.analyticsTracker = analyticsTracker
     }
